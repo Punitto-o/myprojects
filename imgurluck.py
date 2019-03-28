@@ -7,7 +7,7 @@
 import sys, requests, bs4, webbrowser
 
 try:
-	fileObj = requests.get('https://imgur.com/search?q=' + ' '.join(sys.argv[1:])) ## Gets the response object of the imgur page, so we can later create a soup object
+	fileObj = requests.get('https://imgur.com/search?q=' + ' '.join(sys.argv[1:])) ## Gets the response object of the imgur page
 	fileObj.raise_for_status() ## Checks to see if it went all okay
 
 	soupObj = bs4.BeautifulSoup(fileObj.text, 'html.parser') ## Creates the soup object, the program will use it to crawl
